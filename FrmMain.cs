@@ -15,16 +15,16 @@ namespace Laboratory
 {
     public partial class FrmMain : Form
     {
-        Employee Emp;
-        public FrmMain(Employee emp)
+        public Employee CurrentEmployee { get; set; }
+        public FrmMain()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             mainpb.Dock = DockStyle.Fill;
-            Emp = emp;
         }
 
         #region Methods
+
         public void OpenSelectedForm<T>() where T : Form, new()
         {
             foreach (Form openedForm in this.MdiChildren)
@@ -42,12 +42,12 @@ namespace Laboratory
             switch (newForm)
             {
                 case FrmPatientTestHeader frmPt:
-                    frmPt.ActiveEmployee = Emp;
+                    frmPt.ActiveEmployee = CurrentEmployee;
                     break;
             }
             newForm.Show();
         }
-        private void SetMainVisiblity()
+        public void SetMainVisiblity()
         {
             foreach (Form OpenedForm in this.MdiChildren)
             {
@@ -118,7 +118,7 @@ namespace Laboratory
         }
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            lblEmployee.Text = Emp.FirstName + "  " + Emp.LastName;
+            lblEmployee.Text = CurrentEmployee.FirstName + "  " + CurrentEmployee.LastName;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

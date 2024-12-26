@@ -173,6 +173,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowIcon = false;
             this.Text = "فرم واحد اندازه گیری آزمایش";
+            
             this.Load += new System.EventHandler(this.FrmTestUnit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdUnit)).EndInit();
             this.ResumeLayout(false);

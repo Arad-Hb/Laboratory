@@ -16,10 +16,12 @@ namespace Laboratory
         DataAccess.UnitRepository unRepo = new DataAccess.UnitRepository();
 
         int unitID;
+
         public FrmTestUnit()
         {
             InitializeComponent();
         }
+       
 
         #region DataBinders
         private void BindGrid()
@@ -132,5 +134,6 @@ namespace Laboratory
                 GoToEditMode();
             }
         }
+
     }
 }

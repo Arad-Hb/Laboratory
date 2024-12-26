@@ -33,7 +33,8 @@ namespace Laboratory
 
             if (empRepo.Login(txtUserName.Text, txtPassword.Text))
             {
-                FrmMain frm = new FrmMain(empRepo.GetByUserName(txtUserName.Text));
+                FrmMain frm = new FrmMain();
+                frm.CurrentEmployee = empRepo.GetByUserName(txtUserName.Text);
                 this.Hide();
                 frm.Show();
             }
